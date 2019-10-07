@@ -1,8 +1,24 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './item.scss'
+import ButtonASC from '../buttonAsc/buttonAsc'
 
 const Item = (props) =>{
-	return	props.state.map((data, index) =>{
+
+	const [item, setItems] = useState(props.state)
+
+	function sortArrayASC (){
+		setItems(item.sort((a, b) => a.actual_price - b.actual_price));
+		item.map((val, index) =>{
+			//console.log(val.actual_price, index)
+		})
+	}
+
+	useEffect(() =>{
+		setItems(item.sort((a, b) => a.actual_price - b.actual_price));
+	});
+
+
+	const ItemRender = item.map((data, index) =>{
 		return(
 			<div className='item'  key={index}>
 				<div className='name'>
@@ -19,7 +35,14 @@ const Item = (props) =>{
 
 			</div>
 		)
-	})
+	});
+
+	return	(
+		<>
+			<button onClick={sortArrayASC} >ASC</button>
+			{ItemRender}
+			</>
+	)
 
 
 

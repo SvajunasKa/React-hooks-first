@@ -20,17 +20,12 @@ export default function App() {
 		setPage(lessPages)
 	};
 
-	function sortArrayASC (){
-		console.log('aaa')
-		setState(state.sort((a, b) => a.actual_price - b.actual_price));
-		state.map((val, index) =>{
-			//console.log(val.actual_price, index)
-		})
-	}
+
 
 	state.map((val, index) =>{
 		//console.log(val.actual_price, index)
 	});
+
 
 	function CreateItem(item) {
 		return item.map((data, index) => {
@@ -51,7 +46,7 @@ export default function App() {
 
 	return (
 		<>
-			<button onClick={sortArrayASC}>sortASC</button>
+			{/*<button onClick={sortArrayASC}>sortASC</button>*/}
 			<Item state = {state} />
 			<button onClick={showMore}>more</button>
 			<button onClick={showLess}>less</button>
