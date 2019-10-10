@@ -1,56 +1,37 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import data from './server/data/product_list'
 import Item from './components/item/item'
-import Pagination from './components/paginator/pagination'
+import ButtonASC from './components/buttonAsc/buttonAsc'
 
 export default function App() {
 
-	//const page = 5;
 	const [page, setPage] = useState(6);
-	const [state, setState] = useState(data);
+	const [items, setItems] = useState(data);
 
-
-	const showMore = () =>{
-		const morePage = page + 5;
-		setPage(morePage)
-	};
-	const showLess = () =>{
-		const lessPages = page - 5;
-		setPage(lessPages)
+	const showMore = () => {
+		setPage(page + 5);
+		const nextSet = data.slice(page, page + 5);
+		setItems(nextSet);
 	};
 
+	const showLess = () => {
+		setPage(page - 5);
+		const prevSet = data.slice(page - 10, page-5);
+		setItems(prevSet);
+	};
 
-
-	state.map((val, index) =>{
-		//console.log(val.actual_price, index)
-	});
-
-
-	function CreateItem(item) {
-		return item.map((data, index) => {
-			//	if (index < 50) {
-			return (
-				<Item
-					key={index}
-					index={index}
-					name={data.product_name}
-					brand_name={data.brand_name}
-					img={data.filename}
-					price={data.actual_price}
-				/>
-			)
-			//}
-		});
-	}
+	const sortArrayASC = () => {
+		const newItem = Object.assign([], items.sort((a, b) => a.actual_price - b.actual_price));
+		setItems(newItem);
+	};
 
 	return (
 		<>
-			{/*<button onClick={sortArrayASC}>sortASC</button>*/}
-			<Item state = {state} />
-			<button onClick={showMore}>more</button>
 			<button onClick={showLess}>less</button>
-
+			<ButtonASC clickEvent={sortArrayASC}/>
+			<button onClick={showMore}>more</button>
+			<Item state={items}/>
 		</>
 	)
 

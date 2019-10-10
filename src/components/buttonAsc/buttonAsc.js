@@ -1,9 +1,9 @@
 import React from 'react'
 
-const buttonASC = (props) =>{
-	return(
-		<button>ASC</button>
+const ButtonASC = (props) => {
+	return (
+		<button onClick={props.clickEvent}>sort</button>
 	)
 };
 
-export default buttonASC
+export default ButtonASC
