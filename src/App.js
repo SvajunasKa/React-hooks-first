@@ -40,7 +40,7 @@ export default function App() {
 				<Header/>
 				<aside>
 					<ButtonASC
-					clickEvent={sortArrayASC}
+					fnSortASC={sortArrayASC}
 				/>
 					<ButtonDSC
 						fnSortDSC={sortArrayDSC}
@@ -56,7 +56,7 @@ export default function App() {
 					fnShowNext={showMore}
 					fnShowLess={showLess}
 					page={page}
-					items={items}
+					items={data}
 					items_per_page={items_per_page}
 				/>
 			</div>

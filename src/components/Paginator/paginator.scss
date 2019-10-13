@@ -1,15 +1,32 @@
-.buttons-block{
+.buttons-block {
   display: flex;
   justify-content: center;
-  margin: 50px 0;
-  .btn{
-    border: 1px solid black;
+  margin: 20px 0;
+  .btn {
+    border: none;
     border-radius: 3px;
-    width: 150px;
-    height: 50px;
+    width: auto;
+    height: auto;
     text-align: center;
-    background-color: white;
+    background-color: #ffffff;
     cursor: pointer;
     margin: 0 20px;
+    &:disabled{
+      opacity: 0.5;
+    }
+    &:after{
+      display: inline-block;
+      content: '';
+      width: 20px;
+      height: 20px;
+      border-top: 2px solid #000000;
+      border-right: 2px solid #000000;
+    }
+    &.next:after {
+      transform: rotate(45deg);
+    }
+    &.prev:after{
+      transform: rotate(-135deg);
+    }
   }
 }

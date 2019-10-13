@@ -8,12 +8,12 @@ const Pagination = (props) => {
 				<button
 					className='btn prev'
 					onClick={props.fnShowLess}
-					disabled={props.page === props.items_per_page}>prev
+					disabled={props.page === props.items_per_page}>
 				</button>
 				<button
 					className='btn next'
 					onClick={props.fnShowNext}
-					disabled={Number(props.items.length / props.page) == '1'}>next
+					disabled={Number(props.items.length / props.page) === 1}>
 				</button>
 			</div>
 		</>
