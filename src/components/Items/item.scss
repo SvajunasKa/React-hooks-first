@@ -1,0 +1,36 @@
+.items-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  width: 150px;
+  border: 1px solid black;
+  margin: 0 20px 20px 20px;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  @media (max-width: 992px) {
+    width: 34%;
+  }
+
+  .name {
+    display: block;
+  }
+  .image {
+    img {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .name, .brand-name, .price{
+    text-align: center;
+    font-weight: 18px;
+  }
+  .name{
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
