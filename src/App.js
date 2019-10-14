@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './App.scss';
-import data from './server/data/product_list'
-import Header from './components/Header/header'
-import Items from './components/Items/item'
-import ButtonASC from './components/ButtonAsc/buttonAsc'
-import ButtonDSC from './components/buttonDsc/buttonDsc'
-import Pagination from './components/Paginator/pagination'
+import data from './server/data/product_list';
+import Header from './components/Header/header';
+import Items from './components/Items/item';
+import ButtonASC from './components/ButtonAsc/buttonAsc';
+import ButtonDSC from './components/buttonDsc/buttonDsc';
+import Pagination from './components/Paginator/pagination';
 
 export default function App() {
 	const items_per_page = 8;
@@ -62,7 +62,6 @@ export default function App() {
 			</div>
 		</>
 	)
-
 }
 
 

@@ -1,5 +1,5 @@
-import React from 'react'
-import './buttonDsc.scss'
+import React from 'react';
+import './buttonDsc.scss';
 
 const ButtonDsc = (props) =>{
 	return(

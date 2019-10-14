@@ -1,5 +1,5 @@
-import React from 'react'
-import './item.scss'
+import React from 'react';
+import './item.scss';
 
 function Items(props) {
 

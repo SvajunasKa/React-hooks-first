@@ -1,5 +1,5 @@
-import React from 'react'
-import './paginator.scss'
+import React from 'react';
+import './paginator.scss';
 
 const Pagination = (props) => {
 	return (
